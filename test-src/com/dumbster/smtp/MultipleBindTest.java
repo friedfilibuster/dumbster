@@ -17,12 +17,12 @@
 
 package com.dumbster.smtp;
 
-import junit.framework.TestCase;
+import java.net.BindException;
 
-/**
- * @author JeremyH
- */
-public class BindProblemTest extends TestCase {
+import junit.framework.TestCase;
+import junit.framework.Test;
+
+public class MultipleBindTest extends TestCase {
 
   private SimpleSmtpServer server;
 
@@ -42,24 +42,10 @@ public class BindProblemTest extends TestCase {
     super.tearDown();
   }
 
-  public void test1() {
-    assertTrue(!server.isStopped());
-  }
-
-  public void test2() {
-    assertTrue(!server.isStopped());
-  }
-
-  public void test3() {
-    assertTrue(!server.isStopped());
-  }
-
-  public void test4() {
-    assertTrue(!server.isStopped());
-  }
-
-  public void test5() {
-    assertTrue(!server.isStopped());
+  public void testSecondServerIsStopped() {
+    assertTrue(!server.isStopped());    
+    SimpleSmtpServer server2 = SimpleSmtpServer.start();
+    assertTrue(server2.isStopped());  
   }
 }
 

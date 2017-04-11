@@ -20,7 +20,7 @@ limitations under the License.
 <project name="dumbster" default="world">
 
   <!-- === project configuration ========================================== -->
-  <property name="release" value="1.6"/>
+  <property name="release" value="1.6.1"/>
   <property name="srcdir" value="src" />
   <property name="etcdir" value="etc" />
   <property name="builddir" value="build" />

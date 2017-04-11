@@ -24,6 +24,7 @@ public class AllTests {
     suite.addTestSuite(SimpleSmtpServerTest.class);
     suite.addTestSuite(SmtpRequestTest.class);
     suite.addTestSuite(BindProblemTest.class);
+    suite.addTestSuite(MultipleBindTest.class);
     return suite;
   }
 
